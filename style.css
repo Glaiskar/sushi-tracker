@@ -1,0 +1,95 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0 10px;
+    background: #f7f7f7;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 20px;
+    font-size: 6vw;
+  }
+  
+  button {
+    margin: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    width: 90%;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+  
+  .sushi-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #scoreboard {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 8vw;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    #scoreboard {
+      font-size: 0.95rem;
+    }
+  }
+
+  .sushi-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .sushi-button {
+    max-width: 150px;
+    width: 100%;    
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+    background: white;
+  }
+  
+  .sushi-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-color: #ff6b6b;
+  }
+  
+  
+  

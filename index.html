@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="sushi.js"></script>
+</head>
+<body>
+    <header>
+        <div id="scoreboard" style="display: none;"></div>   
+    </header>
+    <h1>Sushi 🍣</h1>
+    <div id="nameSelector">
+        <label>Ваше имя:</label>
+        <select id="playerName">
+            <option value="Arina">Arina</option>
+            <option value="Aleksei">Aleksei</option>
+        </select>
+        <button onclick="setPlayer()">Начать</button>
+    </div>
+    <div id="app" style="display:none;">
+        <h2 id="youName"></h2>
+        <div class="sushi-list">
+            <img src="images/bass.png" class="sushi-button" onclick="addSushi('bass')" />
+            <img src="images/salmon.png" class="sushi-button" onclick="addSushi('salmon')" />
+            <img src="images/shrimp-nigiri.png" class="sushi-button" onclick="addSushi('shrimp-nigiri')" />
+            <img src="images/eel-nigiri.png" class="sushi-button" onclick="addSushi('eel-nigiri')" />
+            <img src="images/tuna-nigiri.png" class="sushi-button" onclick="addSushi('tuna-nigiri')" />
+            <img src="images/cucu.png" class="sushi-button" onclick="addSushi('cucu')" />
+            <img src="images/salmon-maki.png" class="sushi-button" onclick="addSushi('salmon-maki')" />
+            <img src="images/tuna-maki.png" class="sushi-button" onclick="addSushi('tuna-maki')" />
+            <img src="images/phila.png" class="sushi-button" onclick="addSushi('phila')" />
+            <img src="images/cali.png" class="sushi-button" onclick="addSushi('cali')" />
+            <img src="images/las-vegas.png" class="sushi-button" onclick="addSushi('las-vegas')" />
+            <img src="images/ninja.png" class="sushi-button" onclick="addSushi('ninja')" />
+            <img src="images/sashimi.png" class="sushi-button" onclick="addSushi('sashimi')" />
+            <img src="images/spring.png" class="sushi-button" onclick="addSushi('spring')" />
+            <img src="images/gyoza.png" class="sushi-button" onclick="addSushi('gyoza')" />
+            <img src="images/octo.png" class="sushi-button" onclick="addSushi('octo')" />
+            <img src="images/shrimp.png" class="sushi-button" onclick="addSushi('shrimp')" />
+            <img src="images/ice.png" class="sushi-button" onclick="addSushi('ice')" />
+            <img src="images/matcha.png" class="sushi-button" onclick="addSushi('matcha')" />
+            <img src="images/vanilla.png" class="sushi-button" onclick="addSushi('vanilla')" />
+            <img src="images/cheese.png" class="sushi-button" onclick="addSushi('cheese')" />                
+        </div>   
+        <button onclick="resetScore()">Сбросить счёт</button> 
+    </div>
+</body>
+</html>
