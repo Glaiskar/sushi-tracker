@@ -67,22 +67,51 @@ function updateScoreboard() {
         .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 
     scoreboard.innerHTML = `<h3>Счёт ${playerName}:</h3>`;
-    const list = document.createElement("ul");
-    list.style.listStyle = "none";
-    list.style.padding = "0";
+    
+    if (sorted.length === 0) {
+        scoreboard.innerHTML += "<p>Пока ничего не съедено 🙃</p>";
+        return;
+    }
+
+    const table = document.createElement("table");
+    table.style.margin = "0 auto";
+    table.style.borderCollapse = "collapse";
 
     sorted.forEach(([type, count]) => {
         const displayName = sushiNames[type] || type;
-        const item = document.createElement("li");
-        item.textContent = `${displayName}: ${count}`;
-        list.appendChild(item);
+        const row = document.createElement("tr");
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = displayName;
+        nameCell.style.padding = "6px 10px";
+
+        const inputCell = document.createElement("td");
+        const input = document.createElement("input");
+        input.type = "number";
+        input.min = 0;
+        input.value = count;
+        input.style.width = "60px";
+        input.onchange = () => {
+            const newVal = parseInt(input.value);
+            if (isNaN(newVal) || newVal < 0) return;
+
+            if (newVal === 0) {
+                delete sushiCount[type];
+            } else {
+                sushiCount[type] = newVal;
+            }
+
+            saveScore();
+            updateScoreboard();
+        };
+
+        inputCell.appendChild(input);
+        row.appendChild(nameCell);
+        row.appendChild(inputCell);
+        table.appendChild(row);
     });
 
-    if (sorted.length === 0) {
-        scoreboard.innerHTML += "<p>Пока ничего не съедено 🙃</p>";
-    } else {
-        scoreboard.appendChild(list);
-    }
+    scoreboard.appendChild(table);
 }
 
 function resetScore() {
